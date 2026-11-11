@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuevo León’s revenue-sharing formula: a
+simulator — Alejandro Domínguez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf7;--ink:#1a1a1a;--muted:#5f5d58;--rule:#dedbd3;--accent:#9b2c1f;--note:#f1eee6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--ink:#ecebe7;--muted:#a3a19a;--rule:#33322f;--accent:#e2735f;--note:#22211f}}
+:root[data-theme="dark"]{--bg:#141413;--ink:#ecebe7;--muted:#a3a19a;--rule:#33322f;--accent:#e2735f;--note:#22211f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.6}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:700px;margin:0 auto;padding:32px 20px 72px}
+.back{font-family:"Inter",system-ui,sans-serif;font-size:.8rem}
+h1{font-weight:600;font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.12;margin:22px 0 6px}
+.sub{font-family:"Inter",system-ui,sans-serif;font-size:.85rem;color:var(--muted);margin:0 0 20px}
+.note{font-family:"Inter",system-ui,sans-serif;font-size:.85rem;background:var(--note);border-left:3px solid var(--accent);padding:10px 14px;margin:0 0 28px;line-height:1.5}
+h2{font-size:1.35rem;margin:34px 0 8px}
+img{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;border:1px solid var(--rule);border-radius:4px}
+figure{margin:28px 0}figcaption{font-family:"Inter",system-ui,sans-serif;font-size:.8rem;color:var(--muted);margin-top:8px}
+.footnotes{font-family:"Inter",system-ui,sans-serif;font-size:.8rem;color:var(--muted);border-top:1px solid var(--rule);margin-top:36px}
+.footnotes hr{display:none}
+</style></head><body><div class="wrap">
+<a class="back" href="../index.html#fiscal">← Back to portfolio</a>
+<h1>Nuevo León’s revenue-sharing formula: a simulator</h1>
+<p class="sub">Policy brief · Spanish original, 2023</p>
+<div class="note">English translation (AI-assisted). The Spanish original, linked here, is the authoritative version: <a href="../assets/docs/ciep-brief-nl-fiscal-formula.pdf">original PDF</a>. Charts keep their original Spanish labels.</div>
+<h2 id="abstract">Abstract</h2>
+<p>This brief looks at the Ley de Coordinación Hacendaria (Fiscal
+Coordination Law) of the state of Nuevo León. The law gives the greatest
+weight to how efficiently municipalities collect local taxes, which
+favors those that already take in more revenue and can widen
+inequalities. To inform the debate, the brief introduces a tool that
+lets users study the effects of possible changes to the distribution
+formula. The goal is to improve public understanding, support discussion
+of possible reforms, help identify fiscal inequalities and improve the
+use of public resources.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The Ley de Coordinación Hacendaria of Nuevo León sets how the state
+must share out the revenue-sharing funds (<em>participaciones</em>) it
+receives from the federal government. About 20% of that money goes
+directly to municipalities. The formula in Article 14 of the law sets
+the rules. It makes collection efficiency the main factor in deciding
+the distribution and leaves population, territory and poverty in second
+place.</p>
+<p>Nuevo León is the only state in Mexico that gives collection
+efficiency more than 40% of the weight in its formula. As a result, the
+municipalities that receive the most money from the state are also the
+ones that collect the most locally. For high-income municipalities such
+as San Pedro Garza García or Monterrey, this creates a virtuous cycle:
+more revenue-sharing gives them more capacity to collect local taxes,
+which brings them even more revenue-sharing the following year. For
+municipalities with low local collection, such as Juárez or Pesquería,
+the cycle is vicious. For these reasons, several mayors and treasurers
+have pushed to change the formula to give more weight to other factors,
+such as population.</p>
+<p>Population is the most important coefficient in most states’ laws. Of
+Mexico’s 32 states, 23 use population as the main factor in distributing
+money to municipalities. San Luis Potosí gives it the most weight: each
+municipality’s share of the population decides 85% of the budget. That
+contrasts sharply with its neighbor Nuevo León, which distributes 22% of
+the budget based on population.</p>
+<p>This brief presents a fiscal simulator built around Articles 14 and
+19 of Nuevo León’s law. Section two describes the status quo using the
+same charts available in the simulator. Section three explains how the
+formula works. Section four sets out the parameters users can change in
+the simulator. The conclusion discusses some implications of making this
+tool public.</p>
+<h2 id="revenue-sharing-in-nuevo-león">Revenue-sharing in Nuevo
+León</h2>
+<p>Under Article 14 of the law, the funds distributed to municipalities
+come from:</p>
+<ul>
+<li>20% of federal revenue-sharing from the General Participation
+Fund</li>
+<li>20% of the Fiscal Oversight and Collection Fund</li>
+<li>20% of the tax on new automobiles</li>
+<li>20% of the Hydrocarbon Extraction Fund</li>
+</ul>
+<p>This pool, which reached 10,998 million pesos in 2023, is slightly
+more than the initial cost of the Dos Bocas refinery. The money helps
+pay for municipal services such as infrastructure maintenance and public
+safety. A central reason many states make population the most important
+coefficient is the expectation that residents should receive similar
+public spending per person. Giving population heavy weight ensures that
+municipal spending per resident is similar across the state.</p>
+<p>In Nuevo León, revenue-sharing is distributed unequally. In 2023
+Juárez received 338 million pesos in total, a little over 700 pesos per
+person. San Pedro Garza García received 1,502 million pesos, almost
+12,000 pesos per person. The disparity is striking: San Pedro receives
+17 times more funding per person than Juárez.</p>
+<p>Figure 1 shows how municipalities such as Monterrey and San Pedro
+receive far more than the rest.</p>
+<figure>
+<img src="img/brief-fig1.png"
+alt="Figure 1. Revenue-sharing by municipality in Nuevo León, 2023 (labels in Spanish)." />
+<figcaption aria-hidden="true">Figure 1. Revenue-sharing by municipality
+in Nuevo León, 2023 (labels in Spanish).</figcaption>
+</figure>
+<figure>
+<img src="img/brief-fig2.png"
+alt="Figure 2. Revenue-sharing per capita in Nuevo León, 2023 (labels in Spanish)." />
+<figcaption aria-hidden="true">Figure 2. Revenue-sharing per capita in
+Nuevo León, 2023 (labels in Spanish).</figcaption>
+</figure>
+<p>Figure 2 shows revenue-sharing per person. Reading it requires the
+distinction between peripheral and urban zones. Peripheral
+municipalities sit at the edge of the Monterrey Metropolitan Area and
+have seen large population increases over the last decade; they include
+Juárez, Cadereyta, Salinas and Zuazua. The average per-person amount in
+urban municipalities is much higher than in peripheral ones. The only
+peripheral municipality that receives more than any urban one is
+Cadereyta, which gets more than Santa Catarina, Guadalupe, Apodaca and
+Escobedo.</p>
+<p>Revenue-sharing per person is far higher in San Pedro than anywhere
+else, up to four times the second-highest (Monterrey). García, Juárez,
+Zuazua, Pesquería and El Carmen receive even less than the peripheral
+average. In short, there is a serious imbalance between municipalities,
+driven largely by geography.</p>
+<p>This imbalance feeds directly into the quality of public services
+municipalities can provide. Take public works: according to their 2023
+budgets, San Pedro allocated 1,560 pesos per person to public works,
+while Juárez allocated 825 pesos per person. The distribution of
+revenue-sharing has a direct effect on the services residents
+receive.</p>
+<p>Municipalities like San Pedro, backed by much larger funding, can
+provide high-quality services and better government. Municipalities like
+Juárez, with limited resources, struggle to provide adequate services
+and sink into a vicious cycle. Poor services lead to more abandoned
+homes, security problems and bad infrastructure, which in turn lowers
+tax collection and deepens their underfunding.</p>
+<p>It is therefore essential to review how municipal revenue-sharing is
+distributed in Nuevo León. Avoiding sharp disparities and seeking a more
+equitable distribution would let every resident receive a similar level
+of service from their municipality, strengthening collective well-being
+and social stability across the state.</p>
+<h2 id="how-is-revenue-sharing-distributed-in-nuevo-león">How is
+revenue-sharing distributed in Nuevo León?</h2>
+<p>The law sets how 20% of federal revenue-sharing is divided among the
+state’s 51 municipalities. The distribution of these 10,998 million
+pesos follows a formula that considers each municipality’s capacity to
+collect taxes, its population, its territory and its social needs.</p>
+<p>The formula sets each municipality’s share (PART) using three
+coefficients, each with its own weight:</p>
+<ol type="1">
+<li><strong>Collection efficiency, CER (50%)</strong>: rewards
+municipalities that collect taxes best. It is calculated mainly from
+property-tax collection, among other factors.</li>
+<li><strong>Population and territory, CEPT (25%)</strong>: balances
+municipalities’ population and land area.</li>
+<li><strong>Social needs, CIMP (25%)</strong>: reflects the social needs
+of each municipality’s population.</li>
+</ol>
+<p>In addition, a compensation mechanism ensures that no municipality
+receives less than the previous year (adjusted for inflation). If a
+municipality would receive less, surpluses from other municipalities
+cover the difference.</p>
+<p>Since 2022 the law includes a transitional rule: the current year’s
+amount depends largely on what the municipality received in 2021, and
+the coefficients affect only the amount added on top of that year.</p>
+<p>Together, these mechanisms aim to distribute the fund taking into
+account each municipality’s collection efficiency, size, population and
+social needs, while guaranteeing that none receives less from one year
+to the next.</p>
+<h2 id="what-users-can-change-in-the-simulator">What users can change in
+the simulator</h2>
+<p>The tool lets users experiment with the distribution by changing the
+coefficients in the formula: collection efficiency (CER), population and
+territory (CEPT), and social needs (CIMP), and see how each change
+affects the final distribution.</p>
+<p>There are several ways to use it:</p>
+<ol type="1">
+<li><strong>Adjust the coefficients.</strong> Raising the weight of CER
+gives a bigger share to municipalities that collect taxes more
+efficiently. Raising CEPT favors municipalities with more population or
+territory; raising CIMP sends more money to areas with greater social
+needs.</li>
+<li><strong>Remove the compensation.</strong> Without it, some
+municipalities could receive less than the year before. This shows the
+distribution the coefficients alone would produce, with no minimum
+guarantee, which could make funding more variable from year to
+year.</li>
+<li><strong>Remove the transitional rule.</strong> Without the rule
+introduced in 2022, funds would no longer depend on the 2021 amount.
+This could redistribute funds substantially, depending on how the other
+coefficients are set.</li>
+</ol>
+<p>The simulator makes the logic of the distribution easier to
+understand and lets users explore the consequences of possible changes
+to Article 14. It can help residents better understand how state money
+flows to municipalities.</p>
+<h2 id="implications">Implications</h2>
+<p>The tool can help users understand in more depth how resources are
+distributed to municipalities in Nuevo León. It may also be useful
+for:</p>
+<ol type="1">
+<li><strong>Transparency and public understanding.</strong> By
+simplifying the distribution process, it can help the public understand
+how these funds are allocated, supporting transparency, citizen
+participation and public scrutiny of allocation decisions.</li>
+<li><strong>Informing policy reform.</strong> By adjusting coefficients
+and seeing the results, policymakers can see how policy could be
+reformed to reach certain goals. For example, to send more money to
+areas with greater social needs, they can see how the distribution
+changes with a higher weight on CIMP.</li>
+<li><strong>Identifying inequalities and opportunities.</strong>
+Comparing the simulator’s results with actual data can show whether
+certain municipalities are underfunded.</li>
+<li><strong>Spending effectiveness.</strong> A clear view of how funds
+follow the coefficients can show where government spending could be more
+effective. If a municipality receives a disproportionate share relative
+to its collection efficiency, population or needs, the weights could be
+revised for a fairer and more effective distribution.</li>
+</ol>
+<h2 id="reference">Reference</h2>
+<p>H. Congreso del Estado de Nuevo León. <em>Ley de Coordinación
+Hacendaria del Estado de Nuevo León</em>. June 16, 2023.
+www.hcnl.gob.mx. Accessed December 10, 2023.</p>
+</div></body></html>
