@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alejandro Domínguez — Data Journalism Portfolio</title>
+<meta name="description" content="Data analysis and reporting portfolio of Alejandro Domínguez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf7; --ink:#1a1a1a; --muted:#5f5d58; --rule:#dedbd3; --accent:#9b2c1f;
+    --card:#ffffff; --todo-bg:#fff4d6; --todo-ink:#6b4e00; --todo-rule:#e8c768;
+    --serif:"Newsreader", Georgia, "Times New Roman", serif;
+    --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+  a{color:var(--accent);text-underline-offset:3px}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px}
+  header.top{border-bottom:1px solid var(--rule);padding:56px 0 36px}
+  .name{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,6vw,3.3rem);line-height:1.05;margin:0 0 10px;letter-spacing:-.01em}
+  .role{font-size:.95rem;color:var(--muted);margin:0 0 18px}
+  .links{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem}
+  nav.toc{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:18px 0;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 22px}
+  nav.toc a{color:var(--muted);text-decoration:none}
+  nav.toc a:hover{color:var(--ink)}
+  section.piece{padding:56px 0;border-bottom:1px solid var(--rule)}
+  .kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin:0 0 10px}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,4vw,2.15rem);line-height:1.15;margin:0 0 14px}
+  h3{font-family:var(--sans);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:30px 0 10px;font-weight:600}
+  p{margin:0 0 14px}
+  .meta{font-size:.9rem;color:var(--muted);margin-bottom:18px}
+  .todo{background:var(--todo-bg);color:var(--todo-ink);border:1px dashed var(--todo-rule);border-radius:6px;padding:12px 14px;font-size:.9rem;margin:0 0 14px}
+  .todo b{font-weight:600}
+  figure{margin:22px 0;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px}
+  figure img, figure video{display:block;width:100%;height:auto;border-radius:3px}
+  figcaption{font-size:.82rem;color:var(--muted);margin-top:8px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid2 figure{margin:0}
+  ul.res{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+  ul.res li{display:flex;gap:10px;align-items:baseline;font-size:.95rem}
+  .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--rule);border-radius:3px;padding:1px 6px;color:var(--muted);white-space:nowrap}
+  .skills{font-size:.92rem;color:var(--muted)}
+  footer{padding:40px 0 64px;font-size:.85rem;color:var(--muted)}
+  @media (max-width:640px){ .grid2{grid-template-columns:1fr} header.top{padding-top:40px} section.piece{padding:44px 0} }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){--bg:#141413;--ink:#ecebe7;--muted:#a3a19a;--rule:#33322f;--accent:#e2735f;--card:#1c1c1a;--todo-bg:#3a2f12;--todo-ink:#f1d78a;--todo-rule:#7a6324}
+  }
+  :root[data-theme="dark"]{--bg:#141413;--ink:#ecebe7;--muted:#a3a19a;--rule:#33322f;--accent:#e2735f;--card:#1c1c1a;--todo-bg:#3a2f12;--todo-ink:#f1d78a;--todo-rule:#7a6324}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1 class="name">Alejandro Domínguez</h1>
+    <p class="role">Data analysis &amp; reporting · R, QGIS, causal inference · Spanish / English</p>
+    <div class="todo"><b>YOUR TEXT — one or two sentences:</b> who you are and what kind of stories you want to tell with data. (Example of the slot, not the content: background, beats, what drives you.)</div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/aledomcris">LinkedIn</a>
+      <a href="https://github.com/aledomyy">GitHub</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:6px 22px;padding:0 20px">
+  <a href="#fiscal">Fiscal inequality in Nuevo León</a>
+  <a href="#mananeras">The president's pressers</a>
+  <a href="#informality">Informal work &amp; ML</a>
+  <a href="#housing">Housing quality index</a>
+  <a href="#about">About</a>
+</div></nav>
+
+<main class="wrap">
+
+  <!-- 1 ─────────────────────────────────────────── -->
+  <section class="piece" id="fiscal">
+    <p class="kicker">Columns · Policy brief · Interactive tool · 2023–2024</p>
+    <h2>Who gets the money: Nuevo León's revenue-sharing formula</h2>
+    <p class="meta">Two published columns (Spanish) · brief and simulator built for CIEP · code in R/Shiny</p>
+
+    <div class="todo"><b>YOUR TEXT — the story (80–120 words):</b> What was the question? What did the data show? Which datasets did you combine, and what did you do with them yourself?</div>
+    <div class="todo"><b>CONFIRM:</b> outlet name and publication dates of the two columns. Say that the original links are no longer online and that the PDFs show the text as submitted. Also mention your role at the time (the first column says you were Secretary of Finance of a peripheral municipality) so the reader sees the context.</div>
+
+    <figure>
+      <video src="assets/video/simulador_demo.mp4" poster="assets/video/simulador_poster.jpg" controls muted playsinline preload="none"></video>
+      <figcaption>Simulator demo: changing the weights of the formula (property-tax collection 0.50 → 0.20, population 0.25 → 0.50, poverty 0.25 → 0.30) and seeing which municipalities gain or lose, in pesos. Recorded from the app's code. The map tab is left out of the recording.</figcaption>
+    </figure>
+
+    <h3>Read &amp; run</h3>
+    <ul class="res">
+      <li><span class="tag">Column</span><a href="assets/docs/horizonte-column-1-fiscal-justice.pdf">Column 1: who should get the money? (PDF, Spanish)</a></li>
+      <li><span class="tag">Column</span><a href="assets/docs/horizonte-column-2-municipal-gap.pdf">Column 2: how the municipal gap widened since 2010 (PDF, Spanish)</a></li>
+      <li><span class="tag">Brief</span><a href="assets/docs/ciep-brief-nl-fiscal-formula.pdf">Brief on the Ley de Coordinación Hacendaria (PDF, Spanish)</a></li>
+      <li><span class="tag">Method</span><a href="assets/docs/simulator-methodology.pdf">Simulator methodology (PDF, Spanish)</a></li>
+      <li><span class="tag">Code</span><a href="https://github.com/aledomyy/aledomyy.github.io/tree/main/code/nl-fiscal-simulator">R / Shiny source and data</a></li>
+    </ul>
+  </section>
+
+  <!-- 2 ─────────────────────────────────────────── -->
+  <section class="piece" id="mananeras">
+    <p class="kicker">Data project · Text analysis · 2021</p>
+    <h2>How much does the president talk about violence?</h2>
+    <p class="meta">Every morning press conference of López Obrador's term to August 2021 · ~213,000 sentences · web scraping, LDA topic model, sentiment analysis</p>
+
+    <div class="todo"><b>YOUR TEXT — the story (100–150 words, in English, neutral tone):</b> the question, how you built the dataset, the main finding (violence ranks 6th-to-last of 15 topics), and what the analysis can and cannot tell us.</div>
+    <div class="todo"><b>YOUR TEXT — method note (3–5 bullets):</b> how you labeled the topics, which sentiment lexicon you used and its limits in Spanish, what "mood" measures. Name your teammates if it was a team project.</div>
+
+    <figure>
+      <img src="assets/img/mananeras-treemap.png" alt="Treemap of the 15 topics by number of sentences in the president's speech" loading="lazy">
+      <figcaption>Share of the president's sentences by topic (LDA, 15 topics).</figcaption>
+    </figure>
+    <div class="grid2">
+      <figure><img src="assets/img/mananeras-geomarea.png" alt="Topic shares over time" loading="lazy"><figcaption>Topic shares over time.</figcaption></figure>
+      <figure><img src="assets/img/mananeras-regresion.png" alt="Regression coefficients of mood on topic shares" loading="lazy"><figcaption>Association between topic shares and sentiment.</figcaption></figure>
+    </div>
+    <figure>
+      <img src="assets/img/mananeras-topicosamlo.png" alt="Top ten words for each of the 15 topics" loading="lazy">
+      <figcaption>The ten most frequent words in each topic.</figcaption>
+    </figure>
+
+    <h3>Code</h3>
+    <ul class="res">
+      <li><span class="tag">Code</span><a href="https://github.com/aledomyy/aledomyy.github.io/tree/main/code/mananeras-text-analysis">Scraper and analysis pipeline (R)</a></li>
+    </ul>
+  </section>
+
+  <!-- 3 ─────────────────────────────────────────── -->
+  <section class="piece" id="informality">
+    <p class="kicker">Peer-reviewed research · Machine learning · 2025</p>
+    <h2>Imputing informal workers for transportation modeling in Latin America</h2>
+    <p class="meta">de Souza, Ponce-López, Peraza-Mues, <b>Domínguez-Cristerna</b> &amp; Miller · <i>Latin American Transport Studies</i>, vol. 3 (2025)</p>
+
+    <div class="todo"><b>YOUR TEXT (50–80 words):</b> what you did in the paper (data merging? the ENOE models? validation?) and why informal work matters for understanding a city like Monterrey.</div>
+
+    <ul class="res">
+      <li><span class="tag">Paper</span><a href="https://www.sciencedirect.com/science/article/pii/S2950024925000095">Read on ScienceDirect</a></li>
+    </ul>
+  </section>
+
+  <!-- 4 ─────────────────────────────────────────── -->
+  <section class="piece" id="housing">
+    <p class="kicker">Award · Survey microdata · 2021</p>
+    <h2>Measuring housing quality and satisfaction in Mexico</h2>
+    <p class="meta">First place, Premio Infonavit de Economía 2021 · team of five, Tecnológico de Monterrey · based on INEGI's National Housing Survey (ENVI 2020)</p>
+
+    <div class="todo"><b>YOUR TEXT (50–80 words):</b> what the index measures, what it found, and which part of the analysis was yours.</div>
+
+    <ul class="res">
+      <li><span class="tag">Essay</span><a href="assets/docs/infonavit-prize-2021-housing-quality.pdf">Winning essay (PDF, Spanish)</a></li>
+      <li><span class="tag">Press</span><a href="https://conectastg.tec.mx/es/pdf-generator/130861">Tec de Monterrey coverage of the award</a></li>
+    </ul>
+  </section>
+
+  <!-- About ─────────────────────────────────────── -->
+  <section class="piece" id="about">
+    <p class="kicker">About</p>
+    <h2>Background</h2>
+    <div class="todo"><b>YOUR TEXT (100–150 words):</b> Yale MPP (AI policy and information integrity), work in Mexican local government, UNDP, research. Why journalism (you wrote for a paper at 15).</div>
+    <p class="skills"><b>Tools:</b> R (tidyverse, sf, Shiny, tidytext), QGIS, Tableau, web scraping, survey microdata (INEGI), text analysis, Git. <span class="todo" style="display:inline-block;margin:6px 0 0;padding:4px 8px"><b>EDIT:</b> add or remove tools</span></p>
+  </section>
+
+  <section class="piece" id="contact" style="border-bottom:0">
+    <p class="kicker">Contact</p>
+    <div class="todo"><b>CHOOSE:</b> which email to show publicly.</div>
+    <p><a href="https://www.linkedin.com/in/aledomcris">LinkedIn</a> · <a href="https://github.com/aledomyy">GitHub</a></p>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© Alejandro Domínguez</div></footer>
+</body>
+</html>
